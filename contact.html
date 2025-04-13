@@ -14,18 +14,89 @@
         <div class="logo">
             <h1>Medicare<span>Plus</span></h1>
         </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html" class="active">Contact</a>
-            <a href="cart.html" class="cart-link">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </a>
-        </div>
-        <div class="mobile-menu">
+        
+        <button class="mobile-menu" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <div class="nav-section">
+                <div class="section-title">Main Menu</div>
+                <div class="nav-grid">
+                    <a href="index.html" class="nav-item">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="about.html" class="nav-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="products.html" class="nav-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                    </a>
+                    <a href="contact.html" class="nav-item active">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category Section -->
+            <div class="nav-section">
+                <div class="section-title">Browse Categories</div>
+                <div class="nav-grid">
+                    <a href="products.html#allopathic" class="nav-item">
+                        <i class="fas fa-pills"></i>
+                        <span>Allopathic</span>
+                    </a>
+                    <a href="products.html#ayurvedic" class="nav-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Ayurvedic</span>
+                    </a>
+                    <a href="products.html#generic" class="nav-item">
+                        <i class="fas fa-capsules"></i>
+                        <span>Generic</span>
+                    </a>
+                    <a href="products.html#supplements" class="nav-item">
+                        <i class="fas fa-prescription-bottle"></i>
+                        <span>Supplements</span>
+                    </a>
+                    <a href="products.html#personal-care" class="nav-item">
+                        <i class="fas fa-pump-soap"></i>
+                        <span>Personal Care</span>
+                    </a>
+                    <a href="products.html#medical-devices" class="nav-item">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Medical Devices</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Shopping Cart -->
+            <div class="nav-section cart-section">
+                <div class="cart-summary">
+                    <div class="cart-items-count">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>0 items</span>
+                    </div>
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span>$0.00</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>View Cart</span>
+                    </a>
+                    <a href="checkout.html" class="checkout-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Checkout</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
