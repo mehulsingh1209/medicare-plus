@@ -28,34 +28,67 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.8rem 5%;
     background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
     color: var(--primary-color);
     font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .logo span {
     color: var(--secondary-color);
+    font-weight: 600;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
 }
 
 .nav-links a:hover,
@@ -65,23 +98,36 @@ body {
 
 .cart-link {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-link i {
+    font-size: 1.2rem;
 }
 
 .cart-count {
     position: absolute;
     top: -8px;
-    right: -8px;
+    right: -12px;
     background: var(--accent-color);
     color: white;
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.4rem;
+    border-radius: 12px;
+    min-width: 18px;
+    text-align: center;
 }
 
 .mobile-menu {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 /* Hero Sections */
@@ -378,17 +424,33 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+        height: 60px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
     .mobile-menu {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 1001;
-        cursor: pointer;
-        padding: 0.5rem;
-        transition: all 0.3s ease;
+        color: var(--primary-color);
+    }
+
+    .mobile-menu:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-menu.active {
+        color: var(--secondary-color);
     }
 
     .mobile-menu i {
-        font-size: 1.8rem;
-        color: var(--primary-color);
+        font-size: 1.5rem;
         transition: transform 0.3s ease;
     }
 
@@ -399,18 +461,19 @@ footer {
     .nav-links {
         display: flex;
         position: fixed;
-        top: 0;
+        top: 60px;
         right: -100%;
-        height: 100vh;
+        height: calc(100vh - 60px);
         width: 75%;
         max-width: 300px;
         background: white;
-        padding: 80px 2rem 2rem;
+        padding: 2rem;
         flex-direction: column;
         gap: 1.5rem;
         transition: right 0.3s ease-in-out;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         z-index: 1000;
+        align-items: flex-start;
     }
 
     .nav-links.active {
@@ -419,10 +482,21 @@ footer {
 
     .nav-links a {
         font-size: 1.1rem;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid var(--border-color);
+        padding: 0.8rem 0;
         width: 100%;
-        display: block;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a i {
+        width: 20px;
+        text-align: center;
     }
 
     .nav-links a:last-child {
@@ -437,7 +511,6 @@ footer {
 
     .cart-count {
         position: static;
-        display: inline-block;
         margin-left: 0.5rem;
     }
 
@@ -445,14 +518,15 @@ footer {
     .mobile-menu-overlay {
         display: none;
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: calc(100vh - 60px);
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
         opacity: 0;
         transition: opacity 0.3s ease;
+        backdrop-filter: blur(4px);
     }
 
     .mobile-menu-overlay.active {
@@ -467,6 +541,31 @@ footer {
     .feature-grid,
     .product-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+        height: 55px;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        top: 55px;
+        width: 85%;
+        padding: 1.5rem;
+    }
+
+    .mobile-menu-overlay {
+        top: 55px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
     }
 }
 
