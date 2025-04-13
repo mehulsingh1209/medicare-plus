@@ -177,20 +177,42 @@ if (scrollTopBtn) {
 }
 
 // Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
 if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-menu-overlay';
+    document.body.appendChild(overlay);
+
+    // Toggle menu function
+    const toggleMenu = () => {
         navLinks.classList.toggle('active');
         menuToggle.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    };
+
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu();
+        });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            toggleMenu();
         }
     });
 }
