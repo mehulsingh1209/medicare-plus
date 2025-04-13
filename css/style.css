@@ -99,6 +99,10 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+.nav-section:last-child {
+    border-bottom: none;
+}
+
 .section-title {
     padding: 0.5rem 1.5rem;
     font-size: 0.8rem;
@@ -137,19 +141,61 @@ body {
     text-align: center;
 }
 
-/* Cart Link */
-.cart-link {
+/* Cart Section Styles */
+.cart-section {
     margin-top: auto;
-    margin: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.cart-summary {
+    padding: 1rem 1.5rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    margin: 0.5rem 1rem;
+}
+
+.cart-items-count {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.8rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cart-items-count i {
+    color: var(--secondary-color);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.cart-actions {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.cart-actions a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cart-link {
     background: var(--secondary-color);
     color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.2s ease;
 }
 
 .cart-link:hover {
@@ -157,13 +203,18 @@ body {
     transform: translateY(-2px);
 }
 
-.cart-count {
-    margin-left: auto;
-    background: white;
-    color: var(--secondary-color);
-    padding: 0.2rem 0.6rem;
-    border-radius: 1rem;
-    font-size: 0.8rem;
+.checkout-link {
+    background: var(--success-color);
+    color: white;
+}
+
+.checkout-link:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+}
+
+.cart-actions i {
+    font-size: 1.1rem;
 }
 
 /* Page Header */
@@ -430,6 +481,14 @@ body {
     .footer-content {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         padding: 3rem 2rem;
+    }
+
+    .cart-summary {
+        margin: 0.5rem 1.5rem;
+    }
+
+    .cart-actions {
+        padding: 0.5rem 1.5rem;
     }
 }
 
