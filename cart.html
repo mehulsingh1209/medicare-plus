@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your shopping cart at MediCare Plus - Review and checkout your selected medicines and healthcare products.">
+    <meta name="keywords" content="shopping cart, checkout, pharmacy, medicines, Birgunj">
+    <title>Shopping Cart - MediCare Plus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Medicare<span>Plus</span></h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-link active">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="cart-container animate-fade">
+        <div class="cart-items">
+            <h2>Your Cart</h2>
+            <div class="cart-item stagger-animation">
+                <img src="img/products/paracetamol.jpg" alt="Paracetamol" class="lazy-load" data-src="img/products/paracetamol.jpg">
+                <div class="item-details">
+                    <h3>Paracetamol 500mg</h3>
+                    <p>Pain relief and fever reduction</p>
+                    <p class="item-price">Rs. 2.50/tablet</p>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" aria-label="Decrease quantity">-</button>
+                    <input type="number" class="quantity" value="1" min="1" max="100">
+                    <button class="quantity-btn" aria-label="Increase quantity">+</button>
+                </div>
+                <button class="remove-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <div class="cart-item stagger-animation">
+                <img src="img/products/chyawanprash.jpg" alt="Dabur Chyawanprash" class="lazy-load" data-src="img/products/chyawanprash.jpg">
+                <div class="item-details">
+                    <h3>Dabur Chyawanprash</h3>
+                    <p>Immunity booster</p>
+                    <p class="item-price">Rs. 325/500g</p>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" aria-label="Decrease quantity">-</button>
+                    <input type="number" class="quantity" value="1" min="1" max="100">
+                    <button class="quantity-btn" aria-label="Increase quantity">+</button>
+                </div>
+                <button class="remove-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="cart-summary animate-slide">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>Rs. 327.50</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery</span>
+                <span>Free</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span>Rs. 327.50</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+            </button>
+            <p class="delivery-note">
+                <i class="fas fa-info-circle"></i>
+                Free delivery for orders above Rs. 500 within Birgunj
+            </p>
+        </div>
+
+        <div class="empty-cart" style="display: none;">
+            <i class="fas fa-shopping-cart"></i>
+            <h2>Your cart is empty</h2>
+            <p>Browse our products and add items to your cart</p>
+            <a href="products.html" class="continue-shopping">Continue Shopping</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Adarshnagar, Birgunj, Nepal</p>
+                <p><i class="fas fa-phone"></i> +977-XXXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> info@medicareplus.com</p>
+                <p class="emergency"><i class="fas fa-ambulance"></i> Emergency: +977-XXXXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Monday - Saturday: 8:00 AM - 9:00 PM</p>
+                <p>Sunday: 9:00 AM - 6:00 PM</p>
+                <p class="emergency">24/7 Emergency Service Available</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MediCare Plus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

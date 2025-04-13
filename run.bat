@@ -1,0 +1,6 @@
+@echo off
+echo Generating images...
+"C:\Users\Mehul\AppData\Local\Programs\Python\Python312\python.exe" generate_images.py
+echo Starting server...
+cd ..
+python -m http.server 8000 
