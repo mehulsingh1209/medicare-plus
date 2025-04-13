@@ -508,25 +508,10 @@ footer {
     }
 
     .nav-links {
+        padding-top: 1rem;
         display: flex;
-        position: fixed;
-        top: 60px;
-        right: -100%;
-        height: calc(100vh - 60px);
-        width: 75%;
-        max-width: 300px;
-        background: white;
-        padding: 2rem;
         flex-direction: column;
-        gap: 1.5rem;
-        transition: right 0.3s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        z-index: 1000;
-        align-items: flex-start;
-    }
-
-    .nav-links.active {
-        right: 0;
+        gap: 0;
     }
 
     .nav-links a {
@@ -537,6 +522,8 @@ footer {
         display: flex;
         align-items: center;
         gap: 1rem;
+        transition: background 0.3s ease;
+        color: var(--text-color);
     }
 
     .nav-links a:hover {
@@ -549,32 +536,29 @@ footer {
         color: var(--secondary-color);
     }
 
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
     .nav-links .cart-link {
         margin: 0;
-        margin-top: auto;
-        background: var(--secondary-color);
-        color: white;
+        background: transparent;
         border-radius: 0;
-        padding: 1.2rem;
-        border-top: 2px solid var(--border-color);
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-color);
+        order: 4;
     }
 
     .nav-links .cart-link:hover {
-        background: #2980b9;
+        background: rgba(52, 152, 219, 0.1);
         transform: none;
     }
 
     .nav-links .cart-link i {
-        color: white;
+        color: var(--secondary-color);
     }
 
     .nav-links .cart-count {
-        background: white;
-        color: var(--secondary-color);
+        background: var(--accent-color);
+        color: white;
+        margin-left: 0.5rem;
     }
 
     /* Add overlay when mobile menu is active */
@@ -660,7 +644,7 @@ footer {
     .nav-links {
         top: 55px;
         width: 85%;
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .mobile-menu-overlay {
@@ -693,6 +677,22 @@ footer {
 
     .feature-card h3 {
         font-size: 1.3rem;
+    }
+
+    .nav-links a,
+    .nav-links .cart-link {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .nav-links a i,
+    .nav-links .cart-link i {
+        font-size: 1.1rem;
+    }
+
+    .cart-count {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.4rem;
     }
 }
 
