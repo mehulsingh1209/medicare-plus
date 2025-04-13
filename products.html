@@ -16,21 +16,19 @@
     <link rel="apple-touch-icon" href="img/icons/icon-192x192.png">
 </head>
 <body>
-    <!-- Mobile Navigation Toggle -->
-    <button class="mobile-menu" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-    </button>
-
     <!-- Main Navigation -->
     <nav class="navbar">
         <div class="logo">
             <h1>Medicare<span>Plus</span></h1>
         </div>
         
-        <!-- Mobile-optimized Navigation Links -->
+        <button class="mobile-menu" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
         <div class="nav-links">
-            <!-- Primary Navigation -->
-            <div class="nav-section primary-nav">
+            <div class="nav-section">
                 <div class="section-title">Main Menu</div>
                 <div class="nav-grid">
                     <a href="index.html" class="nav-item">
@@ -51,10 +49,10 @@
                     </a>
                 </div>
             </div>
-            
-            <!-- Product Categories -->
-            <div class="nav-section categories">
-                <div class="section-title">Categories</div>
+
+            <!-- Category Section -->
+            <div class="nav-section">
+                <div class="section-title">Browse Categories</div>
                 <div class="nav-grid">
                     <a href="#allopathic" class="nav-item">
                         <i class="fas fa-pills"></i>
@@ -83,9 +81,8 @@
                 </div>
             </div>
 
-            <!-- Shopping Cart Section -->
+            <!-- Shopping Cart -->
             <div class="nav-section cart-section">
-                <div class="section-title">Shopping Cart</div>
                 <div class="cart-summary">
                     <div class="cart-items-count">
                         <i class="fas fa-shopping-cart"></i>
@@ -98,129 +95,86 @@
                 </div>
                 <div class="cart-actions">
                     <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
                         <span>View Cart</span>
-                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="checkout.html" class="checkout-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Checkout</span>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header with Search -->
-    <header class="page-header">
-        <div class="header-content">
-            <h1>Our Products</h1>
-            <p>Browse through our extensive collection of quality medicines and healthcare products</p>
-            <div class="search-container">
-                <form class="search-form" action="/search" method="GET">
-                    <input type="search" name="q" placeholder="Search products..." aria-label="Search products">
-                    <button type="submit" aria-label="Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+    <!-- Main Content -->
+    <main>
+        <!-- Category Browse Section -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>Browse by Category</h2>
+                <p>Find the products you need by category</p>
             </div>
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span class="separator">/</span>
-                <span>Products</span>
+            
+            <div class="category-grid stagger-animation">
+                <!-- Allopathic -->
+                <div class="category-card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Allopathic Medicines</h3>
+                    <p>Quality medicines from trusted pharmaceutical companies</p>
+                    <span class="item-count">150+ items</span>
+                    <a href="#allopathic" class="category-link">Browse Products</a>
+                </div>
+
+                <!-- Ayurvedic -->
+                <div class="category-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Ayurvedic Medicines</h3>
+                    <p>Traditional healing with modern quality standards</p>
+                    <span class="item-count">80+ items</span>
+                    <a href="#ayurvedic" class="category-link">Browse Products</a>
+                </div>
+
+                <!-- Generic -->
+                <div class="category-card">
+                    <i class="fas fa-capsules"></i>
+                    <h3>Generic Medicines</h3>
+                    <p>Affordable alternatives with same effectiveness</p>
+                    <span class="item-count">200+ items</span>
+                    <a href="#generic" class="category-link">Browse Products</a>
+                </div>
+
+                <!-- Supplements -->
+                <div class="category-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h3>Supplements</h3>
+                    <p>Vitamins and supplements for better health</p>
+                    <span class="item-count">100+ items</span>
+                    <a href="#supplements" class="category-link">Browse Products</a>
+                </div>
+
+                <!-- Personal Care -->
+                <div class="category-card">
+                    <i class="fas fa-pump-soap"></i>
+                    <h3>Personal Care</h3>
+                    <p>Daily care and hygiene products</p>
+                    <span class="item-count">120+ items</span>
+                    <a href="#personal-care" class="category-link">Browse Products</a>
+                </div>
+
+                <!-- Medical Devices -->
+                <div class="category-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Medical Devices</h3>
+                    <p>Quality healthcare devices for home use</p>
+                    <span class="item-count">50+ items</span>
+                    <a href="#medical-devices" class="category-link">Browse Products</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </section>
+    </main>
 
-    <!-- Category Quick Access -->
-    <section class="category-section">
-        <div class="section-header">
-            <h2>Browse by Category</h2>
-            <p>Find the products you need by category</p>
-        </div>
-        <div class="category-grid stagger-animation">
-            <a href="#allopathic" class="category-card">
-                <i class="fas fa-pills"></i>
-                <h3>Allopathic Medicines</h3>
-                <span class="item-count">150+ items</span>
-            </a>
-            <a href="#ayurvedic" class="category-card">
-                <i class="fas fa-leaf"></i>
-                <h3>Ayurvedic Medicines</h3>
-                <span class="item-count">80+ items</span>
-            </a>
-            <a href="#generic" class="category-card">
-                <i class="fas fa-capsules"></i>
-                <h3>Generic Medicines</h3>
-                <span class="item-count">200+ items</span>
-            </a>
-            <a href="#supplements" class="category-card">
-                <i class="fas fa-prescription-bottle"></i>
-                <h3>Supplements</h3>
-                <span class="item-count">100+ items</span>
-            </a>
-            <a href="#personal-care" class="category-card">
-                <i class="fas fa-pump-soap"></i>
-                <h3>Personal Care</h3>
-                <span class="item-count">120+ items</span>
-            </a>
-            <a href="#medical-devices" class="category-card">
-                <i class="fas fa-stethoscope"></i>
-                <h3>Medical Devices</h3>
-                <span class="item-count">50+ items</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Prescription Notice -->
-    <section class="prescription-notice">
-        <div class="notice-content">
-            <i class="fas fa-prescription"></i>
-            <h3>Prescription Required</h3>
-            <p>Some medicines require a valid prescription from a licensed healthcare provider.</p>
-            <div class="notice-actions">
-                <a href="#upload" class="btn-upload">
-                    <i class="fas fa-upload"></i>
-                    Upload Prescription
-                </a>
-                <a href="#learn-more" class="btn-learn">
-                    <i class="fas fa-info-circle"></i>
-                    Learn More
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Sections -->
-    <section id="allopathic" class="product-section">
-        <div class="section-header">
-            <h2>Allopathic Medicines</h2>
-            <p>Quality medicines from trusted pharmaceutical companies</p>
-        </div>
-        <div class="filter-bar">
-            <button class="filter-btn">
-                <i class="fas fa-filter"></i>
-                Filter
-            </button>
-            <select class="sort-select" aria-label="Sort products">
-                <option value="popular">Most Popular</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="new">Newest First</option>
-            </select>
-        </div>
-        <div class="product-grid stagger-animation">
-            <!-- Product cards will be dynamically loaded here -->
-        </div>
-        <div class="load-more">
-            <button class="btn-load-more">
-                <i class="fas fa-sync"></i>
-                Load More
-            </button>
-        </div>
-    </section>
-
-    <!-- Similar structure for other product sections -->
-    <section id="ayurvedic" class="product-section">
-        <!-- Similar structure as allopathic section -->
-    </section>
-
-    <!-- Mobile-optimized Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -238,10 +192,6 @@
                         <i class="fas fa-envelope"></i>
                         <span>info@medicareplus.com</span>
                     </a>
-                    <a href="tel:+977XXXXXXXXX" class="contact-item emergency">
-                        <i class="fas fa-ambulance"></i>
-                        <span>Emergency: +977-XXXXXXXXX</span>
-                    </a>
                 </div>
             </div>
             
@@ -251,7 +201,6 @@
                     <a href="about.html">About Us</a>
                     <a href="products.html">Products</a>
                     <a href="contact.html">Contact</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
                 </div>
             </div>
             
@@ -266,38 +215,20 @@
                         <span class="days">Sunday:</span>
                         <span class="time">9:00 AM - 6:00 PM</span>
                     </div>
-                    <div class="hours-item emergency">
-                        <span>24/7 Emergency Service Available</span>
-                    </div>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
             <p>&copy; 2025 MediCare Plus. All Rights Reserved.</p>
-            <a href="https://msr-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link">
-                Designed and Developed by MSR
-            </a>
         </div>
     </footer>
 
-    <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <button id="scroll-top" aria-label="Scroll to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        <a href="#emergency" class="fab emergency" aria-label="Emergency contact">
-            <i class="fas fa-ambulance"></i>
-        </a>
-    </div>
+    <!-- Floating Action Button -->
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Scripts -->
     <script src="js/script.js"></script>
-    <script>
-        // Register Service Worker for PWA
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
-        }
-    </script>
 </body>
 </html> 
